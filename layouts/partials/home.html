@@ -49,42 +49,28 @@
 				</div>
 				<div class="text-lg mt-3">
 					<div>
-						{{if $data.about.text}}{{replace $data.about.text "\n" "<br/>" | safeHTML}}
-						{{else}}You can put text in data/home/about.toml/text{{end}}
+						{{if $data.about.text}}{{replace $data.about.text "\n" "<br />" | safeHTML}} {{else}}You can put text in data/home/about.toml/text{{end}}
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section id="projects" class="mt-12">
 			<div class="md:flex justify-center">
 				<div class="text-3xl title-deco tracking-wide">作品</div>
 			</div>
 
-			{{if $data.project.list}}
+			{{$paginator := .Paginate (first 6 .Site.RegularPages)}}
+			{{if gt $paginator.TotalPages 0}}
 			<div
 				class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
 			>
-				{{range $data.project.list}}
-				<div class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 border-white border-4 hover:opacity-80 hover:border-red-300">
-					{{/*  opacity-90  */}}
-					<a href="{{.url}}" target="_blank">
-						<img
-							class="h-72 w-full object-cover"
-							src="{{.image}}"
-						/>
-					</a>
-					<div class="px-6 py-4">
-						<div class="font-bold text-xl mb-2">{{.title}}</div>
-						<p class="text-gray-700 text-base">
-							{{.text}}
-						</p>
-					</div>
-				</div>
+				
+				{{range $paginator.Pages}}
+					{{partial "card.html" .}}
 				{{end}}
 			</div>
 			{{else}}
-			<div class="mt-4 text-xl text-center">Projects does not exist</div>
+			<div class="mt-4 text-xl text-center">Add markdown in "/Content"</div>
 			{{end}}
 		</section>
 	</main>

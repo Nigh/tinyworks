@@ -1,0 +1,13 @@
+<div
+	class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 border-white border-4 hover:opacity-80 hover:border-red-300"
+>
+	<a href="{{.Params.url}}" target="_blank">
+		<img class="h-72 w-full object-cover" src="{{.Params.image}}" />
+	</a>
+	<div class="px-6 py-4">
+		<div class="font-bold text-xl mb-2">{{.Title}}</div>
+		<p class="text-gray-700 text-base">
+			{{.Content}}
+		</p>
+	</div>
+</div>
