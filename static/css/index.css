@@ -71,6 +71,14 @@
 	}
 }
 
+.title, .title-text {
+	text-shadow: 0 0 7px #999999;
+}
+
+.title-img {
+	object-fit: cover;
+}
+
 .title-deco {
 	position: relative;
 }

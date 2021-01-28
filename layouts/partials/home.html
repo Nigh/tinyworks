@@ -1,7 +1,7 @@
 <div>
 	<div
 		id="mainBG"
-		style="background-image: url('{{ if $.Site.Params.mainbg }}{{ $.Site.Params.mainbg }}{{ else }}https://picsum.photos/1920/1080{{ end }}');"
+		style="background-image: url('{{ if $.Site.Params.mainbg }}{{ $.Site.Params.mainbg }}{{ else }}/img/sample_bg_blue_r.png{{ end }}');"
 	>
 		<div
 			class="wave wave1"
@@ -21,12 +21,11 @@
 		></div>
 		<div class="centerAll">
 			<div class="title text-6xl font-bold text-center">
-				{{if $.Site.Params.maintitle }}{{ $.Site.Params.maintitle
-				}}{{else}}Hello, World{{end}}
+				{{if $.Site.Params.maintitle}}{{$.Site.Params.maintitle}}
+				{{else}}Hello, World{{end}}
 			</div>
-			<div class="text text-xl text-center">
-				{{if $.Site.Params.maintext}}{{ $.Site.Params.maintext
-				}}{{else}}Edit config.toml/params{{end}}
+			<div class="title-text text text-xl text-center">
+				{{if $.Site.Params.maintext}}{{ $.Site.Params.maintext }}{{else}}Edit config.toml/params{{end}}
 			</div>
 		</div>
 	</div>
@@ -34,7 +33,7 @@
 	<main class="container mx-auto mt-8 px-4 xl:px-0">
 		<section id="about" class="md:flex justify-around">
 			<div class="my-auto md:mr-4">
-				{{ partial "home_title" (dict "title" "About Me") }}
+				<div class="text-3xl title-deco tracking-wide"> 关于{{$.Site.Params.maintitle}} </div>
 				<div class="flex mt-3 gap-3 text-xl">
 					{{ range $data.about.link }}
 					<a href="{{.url}}"><i class="{{ .icon }}"></i></a>{{end}}
@@ -47,53 +46,15 @@
 				</div>
 				<div class="text-lg mt-3">
 					<div>
-						{{ if $data.about.text}}{{ replace $data.about.text "\n"
-						"<br />" | safeHTML }} {{else}}You can put text in
-						data/home/about.toml/text{{end}}
+						{{ if $data.about.text}}{{ replace $data.about.text "\n" "<br />" | safeHTML }} {{else}}You can put text in data/home/about.toml/text{{end}}
 					</div>
 				</div>
 			</div>
 		</section>
-		<section id="skills" class="mt-12">
-			<div class="md:flex justify-center">
-				{{ partial "home_title" (dict "title" "Skills") }}
-			</div>
 
-			{{if $data.skills.list}}
-			<div
-				class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-			>
-				{{ range $data.skills.list }}
-				<div class="w-full rounded overflow-hidden shadow-lg">
-					<div class="">
-						<div
-							class="font-bold text-xl mb-2 py-2 px-6 bg-gray-500"
-						>
-							<div class="flex">
-								<img
-									src="{{ .icon }}"
-									width="50px"
-									class="bg-gray-300 py-1 px-1 rounded-full"
-								/>
-								<div class="my-auto ml-2">
-									{{ .name }}
-								</div>
-							</div>
-						</div>
-						<p class="text-gray-700 text-base px-6 pb-4">
-							{{ replace .text "\n" "<br />" | safeHTML }}
-						</p>
-					</div>
-				</div>
-				{{end}}
-			</div>
-			{{else}}
-			<div class="mt-4 text-xl text-center">Skills don't exist</div>
-			{{end}}
-		</section>
 		<section id="projects" class="mt-12">
 			<div class="md:flex justify-center">
-				{{ partial "home_title" (dict "title" "Projects") }}
+				<div class="text-3xl title-deco tracking-wide"> 作品 </div>
 			</div>
 
 			{{if $data.project.list}}
@@ -104,10 +65,9 @@
 				<div class="w-full rounded overflow-hidden shadow-lg">
 					<a href="{{ .url }}" target="_blank">
 						<img
-							class="h-48"
+							class="title-img"
 							src="{{ .image }}"
 							alt="Sunset in the mountains"
-							style="object-fit: cover;"
 						/>
 					</a>
 					<div class="px-6 py-4">
