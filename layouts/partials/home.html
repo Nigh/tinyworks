@@ -1,23 +1,23 @@
 <div>
 	<div
 		id="mainBG"
-		style="background-image: url('{{ if $.Site.Params.mainbg }}{{ $.Site.Params.mainbg }}{{ else }}/img/sample_bg_blue_r.png{{ end }}');"
+		style="background-image: url('{{if $.Site.Params.mainbg}}{{$.Site.Params.mainbg}}{{else}}/img/sample_bg_blue_r.png{{end}}');"
 	>
 		<div
 			class="wave wave1"
-			style="background-image: url('{{ .Site.BaseURL }}/img/wave.webp');"
+			style="background-image: url('{{.Site.BaseURL}}/img/wave.webp');"
 		></div>
 		<div
 			class="wave wave2"
-			style="background-image: url('{{ .Site.BaseURL }}/img/wave.webp');"
+			style="background-image: url('{{.Site.BaseURL}}/img/wave.webp');"
 		></div>
 		<div
 			class="wave wave3"
-			style="background-image: url('{{ .Site.BaseURL }}/img/wave.webp');"
+			style="background-image: url('{{.Site.BaseURL}}/img/wave.webp');"
 		></div>
 		<div
 			class="wave wave4"
-			style="background-image: url('{{ .Site.BaseURL }}/img/wave.webp');"
+			style="background-image: url('{{.Site.BaseURL}}/img/wave.webp');"
 		></div>
 		<div class="centerAll">
 			<div class="title text-6xl font-bold text-center">
@@ -25,28 +25,32 @@
 				{{else}}Hello, World{{end}}
 			</div>
 			<div class="title-text text text-xl text-center">
-				{{if $.Site.Params.maintext}}{{ $.Site.Params.maintext }}{{else}}Edit config.toml/params{{end}}
+				{{if $.Site.Params.maintext}}{{$.Site.Params.maintext}}
+				{{else}}Edit config.toml/params{{end}}
 			</div>
 		</div>
 	</div>
-	{{ $data := .Site.Data.home }}
+	{{$data := .Site.Data.home}}
 	<main class="container mx-auto mt-8 px-4 xl:px-0">
 		<section id="about" class="md:flex justify-around">
 			<div class="my-auto md:mr-4">
-				<div class="text-3xl title-deco tracking-wide"> 关于{{$.Site.Params.maintitle}} </div>
+				<div class="text-3xl title-deco tracking-wide">
+					关于{{$.Site.Params.maintitle}}
+				</div>
 				<div class="flex mt-3 gap-3 text-xl">
-					{{ range $data.about.link }}
-					<a href="{{.url}}"><i class="{{ .icon }}"></i></a>{{end}}
+					{{range $data.about.link}}
+					<a href="{{.url}}"><i class="{{.icon}}"></i></a>{{end}}
 				</div>
 			</div>
 			<div class="mt-4 md:mt-0 md:ml-4">
 				<div class="text-2xl font-bold">
-					{{ if $data.about.title }}{{$data.about.title}}{{else}}You
-					can put text in data/home/about.toml/title{{end}}
+					{{if $data.about.title}}{{$data.about.title}}{{else}}You can
+					put text in data/home/about.toml/title{{end}}
 				</div>
 				<div class="text-lg mt-3">
 					<div>
-						{{ if $data.about.text}}{{ replace $data.about.text "\n" "<br />" | safeHTML }} {{else}}You can put text in data/home/about.toml/text{{end}}
+						{{if $data.about.text}}{{replace $data.about.text "\n" "<br/>" | safeHTML}}
+						{{else}}You can put text in data/home/about.toml/text{{end}}
 					</div>
 				</div>
 			</div>
@@ -54,26 +58,26 @@
 
 		<section id="projects" class="mt-12">
 			<div class="md:flex justify-center">
-				<div class="text-3xl title-deco tracking-wide"> 作品 </div>
+				<div class="text-3xl title-deco tracking-wide">作品</div>
 			</div>
 
 			{{if $data.project.list}}
 			<div
 				class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
 			>
-				{{ range $data.project.list }}
-				<div class="w-full rounded overflow-hidden shadow-lg">
-					<a href="{{ .url }}" target="_blank">
+				{{range $data.project.list}}
+				<div class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 border-white border-4 hover:opacity-80 hover:border-red-300">
+					{{/*  opacity-90  */}}
+					<a href="{{.url}}" target="_blank">
 						<img
-							class="title-img"
-							src="{{ .image }}"
-							alt="Sunset in the mountains"
+							class="h-72 w-full object-cover"
+							src="{{.image}}"
 						/>
 					</a>
 					<div class="px-6 py-4">
-						<div class="font-bold text-xl mb-2">{{ .title }}</div>
+						<div class="font-bold text-xl mb-2">{{.title}}</div>
 						<p class="text-gray-700 text-base">
-							{{ .text }}
+							{{.text}}
 						</p>
 					</div>
 				</div>
