@@ -5,7 +5,8 @@
 		<img class="h-72 w-full object-cover" src="{{.Params.image}}" />
 	</a>
 	<div class="px-6 py-4">
-		<div class="font-bold text-xl mb-2">{{.Title}}</div>
+		<div class="font-bold text-xl">{{.Title}}</div>
+		<div class="text-xs font-mono opacity-40 mb-2">{{.Params.date.Format "2006-01-02"}}</div>
 		<p class="text-gray-700 text-base">
 			{{.Content}}
 		</p>
