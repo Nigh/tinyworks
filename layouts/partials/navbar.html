@@ -1,9 +1,9 @@
 <nav class="pl-4 md:pl-24">
 	<a href="{{.Site.BaseURL}}" class="logo">{{.Site.Title}}</a>
 	<ul class="hidden md:flex">
-		{{range .Site.Menus.main}}
+		{{range sort .Site.Sections .Params.weight}}
 		<li>
-			<a href="{{.URL}}">{{.Name}}</a>
+			<a href="#{{.Params.id}}">{{.Title}}</a>
 		</li>
 		{{end}}
 	</ul>
