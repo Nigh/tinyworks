@@ -54,24 +54,21 @@
 				</div>
 			</div>
 		</section>
-		<section id="projects" class="mt-12">
+		{{range sort .Site.Sections .Params.weight}}
+		<section id="{{.Params.id}}" class="mt-12">
 			<div class="md:flex justify-center">
-				<div class="text-3xl title-deco tracking-wide">作品</div>
+				<div class="text-3xl title-deco tracking-wide">{{.Title}}</div>
 			</div>
-
-			{{$paginator := .Paginate (first 6 .Site.RegularPages)}}
+			{{$paginator := .Paginate (first 6 (sort .RegularPages .Params.date))}}
 			{{if gt $paginator.TotalPages 0}}
 			<div
 				class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
 			>
-				
-				{{range $paginator.Pages}}
-					{{partial "card.html" .}}
-				{{end}}
-			</div>
+			{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
 			{{else}}
-			<div class="mt-4 text-xl text-center">Add markdown in "/Content"</div>
+			<div class="mt-4 text-xl text-center">Coming soon</div>
 			{{end}}
 		</section>
+		{{end}}
 	</main>
 </div>
