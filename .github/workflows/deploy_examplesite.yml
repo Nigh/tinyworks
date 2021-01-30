@@ -26,7 +26,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          external_repository: Nigh/tinyworks
           publish_dir: "./tinyworks_site"
           keep_files: false
           publish_branch: docs
