@@ -56,19 +56,27 @@
 		</section>
 		{{range sort .Site.Sections .Params.weight}}
 		<section id="{{.Params.id}}" class="mt-12">
+			{{$paginator := .Paginate (sort .RegularPages .Params.date) 6}}
 			<div class="md:flex justify-center">
 				<div class="text-3xl title-deco tracking-wide">{{.Title}}</div>
+				<div class="text-3sm opacity-30 px-3 pt-3">{{$paginator.TotalNumberOfElements}}</div>
 			</div>
-			{{$paginator := .Paginate (first 6 (sort .RegularPages .Params.date))}}
 			{{if gt $paginator.TotalPages 0}}
-			<div
-				class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-			>
-			{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
+				<div
+					class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+				>
+				{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
 			{{else}}
-			<div class="mt-4 text-xl text-center">Coming soon</div>
+				<div class="mt-4 text-xl text-center">Coming soon</div>
 			{{end}}
 		</section>
+			{{if gt $paginator.TotalPages 1}}
+				<div class="md:flex justify-center">
+				{{range $paginator.Pagers}} 
+				<div class="text-3m px-2 py-1 mx-1 mt-4 rounded {{if eq $paginator.PageNumber .PageNumber}}bg-red-200{{else}}hover:bg-gray-200 cursor-pointer{{end}}">{{.PageNumber}}</div>
+				{{end}}
+				</div>
+			{{end}}
 		{{end}}
 	</main>
 </div>
