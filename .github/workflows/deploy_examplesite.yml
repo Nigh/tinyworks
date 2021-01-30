@@ -1,0 +1,33 @@
+name: Deploy to Gitee Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify -d ../tinyworks_site -b https://nigh.github.io/tinyworks/ --themesDir ../.. -s ./exampleSite
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: Nigh/tinyworks
+          publish_dir: "./tinyworks_site"
+          keep_files: false
+          publish_branch: docs
+          commit_message: ${{ github.event.head_commit.message }}
+
