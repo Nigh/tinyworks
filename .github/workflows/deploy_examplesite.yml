@@ -1,4 +1,4 @@
-name: Deploy to Gitee Pages
+name: Deploy example site
 
 on:
   push:
