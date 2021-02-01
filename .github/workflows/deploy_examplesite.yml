@@ -28,6 +28,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: "./tinyworks_site"
           keep_files: false
+          force_orphan: true
           publish_branch: docs
           commit_message: ${{ github.event.head_commit.message }}
 
