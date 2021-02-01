@@ -14,6 +14,7 @@ Demo site: https://nigh.github.io/tinyworks
 
 - [x] 模块
 - [x] 分页
-- [ ] 翻页
-- [ ] 重写"关于"样式
+- [x] 重写"关于"样式
+- [ ] 添加"信息"样式
 - [ ] 内页
+- [ ] 翻页

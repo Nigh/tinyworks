@@ -10,13 +10,3 @@ publishDir = "docs"
     name = "下限Nico"
     mainTitle = "TinyWorks"
     mainText = "只是做了一点微小的工作"
-
-[menus]
-    [[menu.main]]
-        identifier = "about"
-        name = "关于"
-        url = "#about"
-    [[menu.main]]
-        identifier = "projects"
-        name = "作品"
-        url = "#projects"
