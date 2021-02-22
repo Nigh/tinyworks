@@ -40,6 +40,11 @@
 			</div>
 			<div class="md:flex justify-center">
 				<div class="grid grid-cols-6 gap-4">
+					{{if .Params.image}}
+					<div class="flex place-content-center mt-8 col-start-3 col-end-5">
+						<img class="rounded-full" src="{{.Params.image}}" />
+					</div>
+					{{end}}
 					<div class="text-lg text-center mt-3 col-start-2 col-end-6 border-b-2">
 						{{.Content}}
 					</div>
@@ -57,7 +62,7 @@
 		{{end}}
 		<!-- Normal Section -->
 		{{range sort (where .Site.Sections ".Params.id" "not in" "[about,info]") .Params.weight}}
-		<section id="{{.Params.id}}" class="mt-12">
+		<section id="{{.Params.id}}" class="mt-12 place-content-center">
 			{{$paginator := .Paginate (sort .RegularPages .Params.date) 6}}
 			<div class="md:flex justify-center">
 				<div class="text-3xl title-deco tracking-wide">{{.Title}}</div>
@@ -65,7 +70,7 @@
 			</div>
 			{{if gt $paginator.TotalPages 0}}
 				<div
-					class="mt-8 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+					class=" mt-8 grid grid-flow-row grid-cols-1 mx-4 md:grid-cols-2 md:mx-10 lg:grid-cols-3 lg:mx-20 gap-4"
 				>
 				{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
 			{{else}}
