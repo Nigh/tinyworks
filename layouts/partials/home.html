@@ -70,7 +70,7 @@
 			</div>
 			{{if gt $paginator.TotalPages 0}}
 				<div
-					class=" mt-8 grid grid-flow-row grid-cols-1 mx-4 md:grid-cols-2 md:mx-10 lg:grid-cols-3 lg:mx-20 gap-4"
+					class="mt-8 grid grid-flow-row grid-cols-2 mx-4 md:grid-cols-3 md:mx-8 gap-4 2xl:grid-cols-4"
 				>
 				{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
 			{{else}}
@@ -78,7 +78,7 @@
 			{{end}}
 		</section>
 			{{if gt $paginator.TotalPages 1}}
-				<div class="md:flex justify-center">
+				<div class="flex justify-center">
 				{{range $paginator.Pagers}} 
 				<div class="text-3m px-2 py-1 mx-1 mt-4 rounded {{if eq $paginator.PageNumber .PageNumber}}bg-red-200{{else}}hover:bg-gray-200 cursor-pointer{{end}}">{{.PageNumber}}</div>
 				{{end}}

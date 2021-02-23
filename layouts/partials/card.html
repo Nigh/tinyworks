@@ -2,12 +2,12 @@
 	class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 hover:opacity-80 "
 >
 	<a href="{{.Params.url}}" target="_blank">
-		<img class="h-72 w-full object-cover" src="{{.Params.image}}" />
+		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Params.image}}" />
 	</a>
 	<div class="px-6 py-4">
 		<div class="font-bold text-xl">{{.Title}}</div>
 		<div class="text-xs font-mono opacity-40 mb-2">{{.Params.date.Format "2006-01-02"}}</div>
-		<p class="text-gray-700 text-base">
+		<p class="text-gray-700 text-xs font-flow font-extralight md:font-normal md:text-sm lg:text-base">
 			{{.Params.description}}
 		</p>
 	</div>
