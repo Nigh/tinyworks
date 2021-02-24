@@ -1,7 +1,13 @@
 <div
 	class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 hover:opacity-80 "
 >
-	<a href="{{.Params.url}}" target="_blank">
+	{{if .Params.url}}
+	<a href="{{.Params.url}}">
+	{{else if .Params.link}}
+	<a href="{{.Params.link}}" target="_blank">
+	{{else}}
+	<a>
+	{{end}}
 		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Params.image}}" />
 	</a>
 	<div class="px-6 py-4">
