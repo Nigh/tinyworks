@@ -20,7 +20,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify -d ../tinyworks_site -b https://nigh.github.io/tinyworks --themesDir ../.. -s ./exampleSite
+        run: hugo --minify -d ../tinyworks_site -b https://nigh.github.io/tinyworks/ --themesDir ../.. -s ./exampleSite
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
