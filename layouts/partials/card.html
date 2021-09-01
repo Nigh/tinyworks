@@ -9,7 +9,7 @@
 	<a>
 	{{end}}
 	{{if .Params.image}}
-		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Site.BaseURL}}{{.Params.image}}" />
+		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Site.BaseURL}}/{{.Params.image}}" />
 	{{else}}
 	<div class="h-24 lg:h-36 w-full object-cover bg-gray-400">No Picture</div>
 	{{end}}
