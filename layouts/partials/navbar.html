@@ -1,12 +1,11 @@
 <nav class="flex justify-center min-w-full">
-	<a href="{{.Site.BaseURL}}" class="text-3xl font-bold uppercase no-underline text-white flex-none relative justify-center items-center">{{.Site.Title}}</a>
+	<a href="{{$.Site.BaseURL}}" class="text-3xl font-bold uppercase no-underline text-white flex-none relative justify-center items-center">{{$.Site.Title}}</a>
 	<div class="flex-grow max-w-md"></div>
 	<div class="flex right-10 relative justify-center items-center">
-		{{range sort .Site.Sections .Params.weight}}
+		{{range (sort $.Site.Sections ".Params.weight").Reverse}}
 		<span class="flex mx-2">
-			<a href="#{{.Params.id}}" class="px-1 cursor-pointer text-white no-underline tracking-tight border-none hover:font-bold hover:text-red-400 hover:border-dotted border-0 border-b-4 border-red-400 ">{{.Title}}</a>
+			<a href="{{ .RelPermalink }}" class="px-1 cursor-pointer text-white no-underline tracking-tight border-none hover:font-bold hover:text-red-300 hover:border-dotted border-0 border-b-4 border-red-300 ">{{.Title}}</a>
 		</span>
 		{{end}}
 	</div>
 </nav>
-<section class="banner"></section>

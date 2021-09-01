@@ -1,0 +1,26 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{.Site.BaseURL}}css/index.css" />
+<link rel="stylesheet" href="{{.Site.BaseURL}}css/navbar.css" />
+<link rel="stylesheet" href="{{.Site.BaseURL}}css/windi.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<!-- <link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css"
+/> -->
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css"
+/>
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"
+/>
+
+<script type="text/javascript">
+	window.addEventListener("scroll", () => {
+		const nav = document.querySelector("nav")
+		nav.classList.toggle("onscroll", window.scrollY > 0)
+	})
+</script>
+<title>{{$.Site.Title}}</title>

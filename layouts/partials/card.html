@@ -1,14 +1,18 @@
 <div
 	class="w-full rounded overflow-hidden shadow-lg hover:border-opacity-60 hover:opacity-80 "
 >
-	{{if .Params.url}}
-	<a href="{{.Params.url}}">
-	{{else if .Params.link}}
-	<a href="{{.Params.link}}" target="_blank">
+	{{if .Params.link}}
+	<a href="{{.Params.link}}">
+	{{else if .Params.extlink}}
+	<a href="{{.Params.extlink}}" target="_blank">
 	{{else}}
 	<a>
 	{{end}}
-		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Params.image}}" />
+	{{if .Params.image}}
+		<img class="h-36 lg:h-72 w-full object-cover" src="{{.Site.BaseURL}}{{.Params.image}}" />
+	{{else}}
+	<div class="h-24 lg:h-36 w-full object-cover bg-gray-400">No Picture</div>
+	{{end}}
 	</a>
 	<div class="px-6 py-4">
 		<div class="font-bold text-xl">{{.Title}}</div>

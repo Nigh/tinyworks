@@ -1,0 +1,30 @@
+<div>
+	{{range sort (where .Site.Sections ".Params.id" "not in" "[about,info,record]") .Params.weight}}
+	<section id="{{.Params.id}}" class="mt-12 place-content-center">
+		{{$paginator := .Paginate (sort .RegularPages .Params.date) 6}}
+		<div class="flex justify-center">
+			<div class="text-3xl title-deco tracking-wide">{{.Title}}</div>
+			<div class="text-3sm opacity-30 px-3 pt-3">{{$paginator.TotalNumberOfElements}}</div>
+		</div>
+		{{if gt $paginator.TotalPages 0}}
+			<div
+				class="mt-8 grid grid-flow-row grid-cols-2 mx-4 md:grid-cols-3 md:mx-8 gap-4"
+			>
+			{{range $paginator.Pages}} {{partial "card.html" .}} {{end}}
+		{{else}}
+			<div class="mt-4 text-xl text-center">Coming soon</div>
+		{{end}}
+	</section>
+		{{if gt $paginator.TotalPages 1}}
+			<div class="flex justify-center">
+			{{range $paginator.Pagers}} 
+				{{if eq $paginator.PageNumber .PageNumber}}
+				<div class="text-3m px-2 py-1 mx-1 mt-4 rounded text-white bg-red-200">{{.PageNumber}}</div>
+				{{else}}
+				<div class="text-3m  px-2 py-1 mx-1 mt-4 rounded border-gray-200 border-solid border-1 hover:bg-gray-200"><a href="{{ .URL }}" class="no-underline text-red-300 cursor-pointer">{{.PageNumber}}</a></div>
+				{{end}}
+			{{end}}
+			</div>
+		{{end}}
+	{{end}}
+</div>

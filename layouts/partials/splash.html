@@ -1,0 +1,31 @@
+<div
+		id="mainBG"
+		style="background-image: url('{{if $.Site.Params.mainbg}}{{$.Site.Params.mainbg}}{{else}}/img/sample_bg_blue_r.png{{end}}');"
+	>
+    <div
+        class="wave wave1"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave2"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave3"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave4"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div class="centerAll">
+        <div class="title text-6xl font-bold text-center">
+            {{if $.Site.Params.maintitle}}{{$.Site.Params.maintitle}}
+            {{else}}TinyWorks{{end}}
+        </div>
+        <div class="title-text text text-xl text-center">
+            {{if $.Site.Params.maintext}}{{$.Site.Params.maintext}}
+            {{else}}Edit config.toml/params{{end}}
+        </div>
+    </div>
+</div>

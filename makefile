@@ -1,5 +1,5 @@
 
-default:
+default: server
 server:
 	hugo server --themesDir ../.. -s ./exampleSite
 

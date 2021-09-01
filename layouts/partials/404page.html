@@ -1,0 +1,39 @@
+<div
+		id="mainBG"
+		style="background-image: url('{{if $.Site.Params.mainbg}}{{$.Site.Params.mainbg}}{{else}}/img/sample_bg_blue_r.png{{end}}');"
+	>
+    <div
+        class="wave wave1"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave2"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave3"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div
+        class="wave wave4"
+        style="background-image: url('{{.Site.BaseURL}}img/wave.webp');"
+    ></div>
+    <div class="centerAll">
+        <div class="title text-6xl font-bold text-center">
+            404
+        </div>
+        <div class="title-text text text-xl text-center">
+            Page not found
+        </div>
+        <div class="flex py-10 relative justify-center items-center">
+            <span class="flex mx-2">
+                <a href="{{$.Site.BaseURL}}" class="text-2xl sm:text-4xl px-1 cursor-pointer text-white no-underline tracking-tight border-none hover:font-bold hover:text-red-300">首页</a>
+            </span>
+            {{range (sort $.Site.Sections ".Params.weight").Reverse}}
+            <span class="flex mx-2">
+                <a href="{{ .RelPermalink }}" class="text-2xl sm:text-4xl px-1 cursor-pointer text-white no-underline tracking-tight border-none hover:font-bold hover:text-red-300">{{.Title}}</a>
+            </span>
+            {{end}}
+        </div>
+    </div>
+</div>
