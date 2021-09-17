@@ -1,12 +1,14 @@
 # TinyWorks
 
+![](https://raw.githubusercontent.com/Nigh/tinyworks/main/images/tn.png)
+
 > Inspired by and modified from [SimpleIntro](https://github.com/gangjun06/SimpleIntro)
 
 Hugo主题：只是做了一点微小的工作
 
 Demo site: https://nigh.github.io/tinyworks
 
-![intro](https://raw.githubusercontent.com/Nigh/tinyworks/main/images/screenshot1.webp)
+![intro](https://raw.githubusercontent.com/Nigh/tinyworks/main/images/main_page.jpg)
 
 ## 开发计划
 

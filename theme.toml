@@ -2,7 +2,7 @@
 name = "TinyWorks"
 license = "MIT"
 licenselink = "https://github.com/Nigh/tinyworks/blob/main/LICENSE"
-description = "Simple Single-Page Theme For Hugo"
+description = "Cute Works Show Theme For Hugo"
 homepage = "https://github.com/Nigh/tinyworks"
 tags = ["clean", "simple", "responsive", "light", "single-page"]
 features = []
