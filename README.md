@@ -10,15 +10,58 @@ Demo site: https://nigh.github.io/tinyworks
 
 ![intro](https://raw.githubusercontent.com/Nigh/tinyworks/main/images/main_page.jpg)
 
-## 开发计划
+## Install
 
-- [x] 模块
-- [x] 分页
-- [x] 重写"关于"样式
-- [x] 添加"信息"样式
-- [x] 翻页
-- [x] 分页
-- [ ] 内页
-- [ ] 单页样式
-- [ ] 更新 navbar 样式
-- [ ] 重写"关于"样式, 没错, 还要继续改
+```bash
+git submodule add https://github.com/Nigh/tinyworks themes/tinyworks
+git submodule update --remote
+hugo server --minify --theme tinyworks
+```
+
+## File tree
+
+- Content
+  - tab1
+    - _index.md
+    - post11.md
+    - post12.md
+  - tab2
+    - _index.md
+    - post21.md
+  - tab3
+    - _index.md
+    - post31.md
+
+## Param
+
+### _index.md
+
+- id: 
+
+- weight
+
+### post$.md
+
+- title
+
+- image
+
+- date
+
+- link
+
+- extlink
+
+- description
+
+## Plan
+
+- [x] module
+- [x] paginator
+- [x] rewrite "about" style
+- [x] add "info" style
+- [x] multipage
+- [ ] innerpage style
+- [ ] single page style
+- [ ] update navbar style
+- [ ] optimize "about" style
