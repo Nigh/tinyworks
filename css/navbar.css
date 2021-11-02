@@ -1,0 +1,30 @@
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	justify-content: space-between;
+	transition: 0.6s;
+	padding: 10px 20px;
+	z-index: 600;
+}
+
+nav.onscroll {
+	padding: 20px 40px;
+	margin: 0px 0px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+nav .logo {
+	position: relative;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+nav.onscroll .logo,
+nav.onscroll ul li a {
+	color: #fff;
+}
