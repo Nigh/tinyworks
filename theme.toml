@@ -12,6 +12,7 @@ paginate = 6
 [author]
   name = "xianii"
   homepage = "https://nigh.github.io/"
+  repo = "https://github.com/Nigh/tinyworks"
 
 [original]
   name = "SimpleIntro"
