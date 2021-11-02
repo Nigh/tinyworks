@@ -6,9 +6,11 @@
 
 Hugo主题：只是做了一点微小的工作
 
+Hugo theme: just doing a little tiny bit of work
+
 Demo site: https://nigh.github.io/tinyworks
 
-![intro](https://raw.githubusercontent.com/Nigh/tinyworks/main/images/main_page.jpg)
+<img src="https://raw.githubusercontent.com/Nigh/tinyworks/main/images/main_page.jpg" alt="intro" style="zoom:50%;" />
 
 ## Install
 
